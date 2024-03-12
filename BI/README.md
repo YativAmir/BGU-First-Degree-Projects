@@ -10,9 +10,14 @@ This project enhances operational efficiency and customer satisfaction through a
 - **Decision Support Framework**: Establishment of a sophisticated decision support system that empowers strategic, tactical, and operational decisions, backed by data-driven insights and predictive analytics.
 - **Analytics and Visualization**: Deployment of cutting-edge analytical tools and visualization platforms to dissect complex datasets, uncover trends, and present actionable insights in an intuitive format.
 
+## Features
+- **Data Integration**: Incorporation of new data structures to better reflect business operations and relationships.
+- **Performance Metrics**: Development and refinement of Key Performance Indicators (KPIs) for comprehensive performance analysis.
+- **Decision Support**: Enhanced frameworks for facilitating strategic, tactical, and operational decision-making.
+- **Analytical Tools**: Use of analytical and business intelligence tools for in-depth data analysis and insight generation.
 ### Technologies Used
-- **SQL Databases**: Utilization of structured query language databases for efficient data storage, retrieval, and management, laying the groundwork for scalable data architecture.
-- **Python/R for Data Analysis**: Leverage of Python and R programming languages for their extensive libraries and frameworks in data manipulation, statistical analysis, and machine learning.
+- **Excel Databases**: Utilization of structured query language databases for efficient data storage, retrieval, and management, laying the groundwork for scalable data architecture.
+- **Rstudio for Data Analysis**: Leverage of Python and R programming languages for their extensive libraries and frameworks in data manipulation, statistical analysis, and machine learning.
 - **BI Tools (e.g., Tableau, Power BI)**: Application of Business Intelligence tools such as Tableau or Power BI for dynamic data visualization, dashboard creation, and real-time business monitoring.
 - **Cloud Services**: Adoption of cloud computing services for enhanced data storage, scalability, and accessibility, facilitating collaborative and remote working environments.
 
