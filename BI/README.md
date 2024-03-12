@@ -3,7 +3,7 @@
 ## Redefine Meat Project
 
 ### Introduction
-The Redefine Meat Project, developed by Group 3 and submitted on 10/03/2024, employs business analytics and artificial intelligence to optimize the supply chain and sales strategies of a meat distribution company. Our project introduces enhancements in data structure, strategic decision-making, and business performance metrics, offering insights for improving operational efficiency and customer satisfaction.
+Our project introduces enhancements in data structure, strategic decision-making, and business performance metrics, offering insights for improving operational efficiency and customer satisfaction.
 
 ### Project Components
 - **Data Update**: Incorporation of a new `ShippingCompany` table and modifications in the `Sale` table to link each sale with the respective shipping company, including shipping costs.
