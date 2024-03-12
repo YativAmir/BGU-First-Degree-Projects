@@ -1,0 +1,74 @@
+---
+title: "group36"
+author: "Ido Goldman, Amit Fedaeli and Amir Yativ"
+date: "2023-01-02"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r libraries, include=TRUE,echo=TRUE}
+library(fitdistrplus)
+library(magrittr)
+```
+## Introduction
+we divided this document into two parts : the first one analyzing the distribution for the couples, and the second one testing the couple’s distribution.
+
+##couples first comparing
+in this part we presenting the information for each distribution
+```{r }
+dataset <- read.csv(file.choose(), header = T)
+couples <- (dataset$X1)
+normFit <- fitdist(couples,"norm")
+summary(normFit) 
+expFit <- fitdist(couples,"exp")
+summary(expFit)
+
+```
+
+## families first comparing
+
+in this part we presenting the information for each distribution
+
+```{r }
+families <- (dataset$X2)
+print(families)
+expFit <- fitdist(families,"exp")
+normFit<-fitdist(families,"norm") # fitting a normal distrbution 
+summary(normFit)
+summary(expFit)
+
+```
+
+
+##Comparing Plots
+this section will show us which distribution is the correct one according to Q-Q and P-P plots, among distribution lines combined with theoretical data :
+
+```{r pressure, echo=FALSE}
+
+plotdist(families,"norm",para=list(mean=normFit$estimate[1], sd=normFit$estimate[2] ) )
+plotdist(families,"exp",para=list(rate=expFit$estimate[1]))
+plotdist(couples,"norm",para=list(mean=normFit$estimate[1], sd=normFit$estimate[2] ) )
+plotdist(couples,"exp",para=list(rate=expFit$estimate[1]))
+
+
+```
+
+##combined compairing Plots
+this section combine both lists in one table for better view and compare:
+
+
+```{r pgenerate}
+par(mfrow=c(2,2)) # manually define a 2X2 graph window 
+legendText<-c("exp","norm") # define legend text
+denscomp(list(expFit,normFit),legendtext=legendText) # 
+qqcomp(list(expFit,normFit),legendtext=legendText)  # 
+cdfcomp(list(expFit,normFit),legendtext=legendText) # 
+ppcomp(list(expFit,normFit),legendtext=legendText) 
+
+```
