@@ -1,5 +1,5 @@
 
---δερτϊ θαμϊ ηιτεω μαριρ δπϊεπιν
+--Γ¤Γ¥Γ±Γ΄ΓΊ Γ¨Γ΅Γ¬ΓΊ Γ§Γ©Γ΄Γ¥ΓΉ Γ¬Γ΅Γ±Γ©Γ± Γ¤Γ°ΓΊΓ¥Γ°Γ©Γ­
 Create Table Searches(
 IP	        Varchar(15)   not null,
 DT	        DateTime      not null, 
@@ -10,7 +10,7 @@ constraint	FK_ItemID_Se
 foreign key(ItemID)
 references Furnitures(ItemID))
 
---ϊιχεο ιωεϊ δδζξπεϊ
+--ΓΊΓ©Γ·Γ¥Γ― Γ©ΓΉΓ¥ΓΊ Γ¤Γ¤Γ¦Γ®Γ°Γ¥ΓΊ
 create	table	Orders (
 OrderID	          int	      not null,
 OrderDate	      date        not null,
@@ -34,7 +34,7 @@ check	(price >= 0) -- (=) coz refunds
 
 
 
---δηαψδ ψεφδ μδχθιο ΰϊ ξαηψ δψδιθιν αιωψΰμ εμλο διΰ αεγχϊ ξδ δωμεωδ δψδιθιν ωδλπιρε δλι ξςθ
+--Γ¤Γ§Γ΅ΓΈΓ¤ ΓΈΓ¥Γ¶Γ¤ Γ¬Γ¤Γ·Γ¨Γ©Γ― Γ ΓΊ Γ®Γ΅Γ§ΓΈ Γ¤ΓΈΓ¤Γ©Γ¨Γ©Γ­ Γ΅Γ©ΓΉΓΈΓ Γ¬ Γ¥Γ¬Γ«Γ― Γ¤Γ©Γ  Γ΅Γ¥Γ£Γ·ΓΊ Γ®Γ¤ Γ¤ΓΉΓ¬Γ¥ΓΉΓ¤ Γ¤ΓΈΓ¤Γ©Γ¨Γ©Γ­ ΓΉΓ¤Γ«Γ°Γ©Γ±Γ¥ Γ¤Γ«Γ© Γ®Γ²Γ¨
 select top 3 f.itemID, 'net value' = sum (m.price*c.quantity)
 from furnitures as f join modifications as m on f.itemId=m.itemId
 join [Contains] as c on f.itemID= C.itemId
@@ -44,7 +44,7 @@ group by f.itemID
 having count (*) < 20
 order by 'net value' 
 
---δξγιπεϊ ςν δλι δψαδ ΰιρετιν λγι μγςϊ ΰιτδ ΰτωψ μφξφν ΰεμι ΰϊ δξςψκ δμεβιρθι
+--Γ¤Γ®Γ£Γ©Γ°Γ¥ΓΊ Γ²Γ­ Γ¤Γ«Γ© Γ¤ΓΈΓ΅Γ¤ Γ Γ©Γ±Γ¥Γ΄Γ©Γ­ Γ«Γ£Γ© Γ¬Γ£Γ²ΓΊ Γ Γ©Γ΄Γ¤ Γ Γ΄ΓΉΓΈ Γ¬Γ¶Γ®Γ¶Γ­ Γ Γ¥Γ¬Γ© Γ ΓΊ Γ¤Γ®Γ²ΓΈΓª Γ¤Γ¬Γ¥ΓΆΓ©Γ±Γ¨Γ©
 select top 3 o.country, pickups = count (*)
 from Customers as c join creditcards as cc on c.email= cc.email
 join orders as o on cc.cardnumber= o.cardnumber
@@ -53,7 +53,7 @@ group by o.country
 ORDER BY pickups DESC
 
 
--- δωεεΰϊ αιο ωπι χεμχωπιν λγι μδριχ πϊεπι ξλιψεϊ εδφμηιδ αξγιπεϊ δωεπεϊ
+-- Γ¤ΓΉΓ¥Γ¥Γ ΓΊ Γ΅Γ©Γ― ΓΉΓ°Γ© Γ·Γ¥Γ¬Γ·ΓΉΓ°Γ©Γ­ Γ«Γ£Γ© Γ¬Γ¤Γ±Γ©Γ· Γ°ΓΊΓ¥Γ°Γ© Γ®Γ«Γ©ΓΈΓ¥ΓΊ Γ¥Γ¤Γ¶Γ¬Γ§Γ©Γ¤ Γ΅Γ®Γ£Γ©Γ°Γ¥ΓΊ Γ¤ΓΉΓ¥Γ°Γ¥ΓΊ
  select b.country , bergamo , fermo, gap = bergamo - fermo
  from (
 	select o.Country,fermo = sum(c.quantity)  
@@ -72,7 +72,7 @@ group by o.Country
 )as b on a.Country=b.Country
 
 
---- ξηζιψ ΰϊ δξγιπεϊ ωξλψε μξρτψ μχεηεϊ ωεπιν ξςμ δξξεφς δςεμξι αωπϊ 2020 
+--- Γ®Γ§Γ¦Γ©ΓΈ Γ ΓΊ Γ¤Γ®Γ£Γ©Γ°Γ¥ΓΊ ΓΉΓ®Γ«ΓΈΓ¥ Γ¬Γ®Γ±Γ΄ΓΈ Γ¬Γ·Γ¥Γ§Γ¥ΓΊ ΓΉΓ¥Γ°Γ©Γ­ Γ®Γ²Γ¬ Γ¤Γ®Γ®Γ¥Γ¶Γ² Γ¤Γ²Γ¥Γ¬Γ®Γ© Γ΅ΓΉΓ°ΓΊ 2020 
 select o.Country , count(distinct c.Email) as total
 from Customers as c join creditcards as cc on c.email= cc.email
 join orders as o on cc.cardnumber= o.cardnumber 
@@ -88,7 +88,7 @@ group by o.Country
 )as a) < count(distinct c.Email)
 
 
--- δηαψδ δημιθδ μϊϊ 10% ξδχπιεϊ ςγ λδ εβν μςϊιγ μθεαϊ δζξπεϊ ηγωεϊ
+-- Γ¤Γ§Γ΅ΓΈΓ¤ Γ¤Γ§Γ¬Γ©Γ¨Γ¤ Γ¬ΓΊΓΊ 10% Γ®Γ¤Γ·Γ°Γ©Γ¥ΓΊ Γ²Γ£ Γ«Γ¤ Γ¥ΓΆΓ­ Γ¬Γ²ΓΊΓ©Γ£ Γ¬Γ¨Γ¥Γ΅ΓΊ Γ¤Γ¦Γ®Γ°Γ¥ΓΊ Γ§Γ£ΓΉΓ¥ΓΊ
 -- ALTER TABLE Customers DROP COLUMN Fcoins
 
 alter table Customers add FCoins money 
@@ -105,7 +105,7 @@ update Customers set Fcoins =
  order by fcoins desc
 
 
- -- ξλμ δμχεηεϊ ωωξψε μτηεϊ ωπι τψθιν αξεςγτιν ΰκ ςγιο μΰ αιφςε δζξπδ λγι μωμεη χετεο
+ -- Γ®Γ«Γ¬ Γ¤Γ¬Γ·Γ¥Γ§Γ¥ΓΊ ΓΉΓΉΓ®ΓΈΓ¥ Γ¬Γ΄Γ§Γ¥ΓΊ ΓΉΓ°Γ© Γ΄ΓΈΓ¨Γ©Γ­ Γ΅Γ®Γ¥Γ²Γ£Γ΄Γ©Γ­ Γ Γª Γ²Γ£Γ©Γ― Γ¬Γ  Γ΅Γ©Γ¶Γ²Γ¥ Γ¤Γ¦Γ®Γ°Γ¤ Γ«Γ£Γ© Γ¬ΓΉΓ¬Γ¥Γ§ Γ·Γ¥Γ΄Γ¥Γ―
 select *
 from Customers as c 
 where (select count(cu.Email)
@@ -119,7 +119,7 @@ join orders as o on cc.cardnumber= o.cardnumber
 group by c.Email, c.firstName, c.lastName , c.phone
 
 
--- δηαψδ ψεφδ μδρϊιψ ΰϊ δλϊεαϊ δξγειχϊ ωμ δμχεηεϊ εβν ΰϊ δπϊεπιν δξμΰιν ωμ λψθιρ δΰωψΰι μθεαϊ ΰαθηϊ ξιγς
+-- Γ¤Γ§Γ΅ΓΈΓ¤ ΓΈΓ¥Γ¶Γ¤ Γ¬Γ¤Γ±ΓΊΓ©ΓΈ Γ ΓΊ Γ¤Γ«ΓΊΓ¥Γ΅ΓΊ Γ¤Γ®Γ£Γ¥Γ©Γ·ΓΊ ΓΉΓ¬ Γ¤Γ¬Γ·Γ¥Γ§Γ¥ΓΊ Γ¥ΓΆΓ­ Γ ΓΊ Γ¤Γ°ΓΊΓ¥Γ°Γ©Γ­ Γ¤Γ®Γ¬Γ Γ©Γ­ ΓΉΓ¬ Γ«ΓΈΓ¨Γ©Γ± Γ¤Γ ΓΉΓΈΓ Γ© Γ¬Γ¨Γ¥Γ΅ΓΊ Γ Γ΅Γ¨Γ§ΓΊ Γ®Γ©Γ£Γ²
 create view view_CustomerOrder as
 select c.Email, c.firstName, c.lastName , c.phone,
        o.OrderID, o.OrderDate, o.CardNumber, o.Country , o.ShippingType,o.price
@@ -131,7 +131,7 @@ select *
 from view_CustomerOrder
 
 
--- αεγχ λξδ λμ μχεη αζαζ αΰϊψ ωμπε μΰεψκ ηιι δμχεη
+-- Γ΅Γ¥Γ£Γ· Γ«Γ®Γ¤ Γ«Γ¬ Γ¬Γ·Γ¥Γ§ Γ΅Γ¦Γ΅Γ¦ Γ΅Γ ΓΊΓΈ ΓΉΓ¬Γ°Γ¥ Γ¬Γ Γ¥ΓΈΓª Γ§Γ©Γ© Γ¤Γ¬Γ·Γ¥Γ§
 create function ordersCosts (@email varchar (30))
 returns money
 as begin
@@ -151,7 +151,7 @@ from Customers as c join creditcards as cc on c.email= cc.email
 order by [orders cost] desc
 
 
---αεγχ λξδ ξλιψεϊ δϊαφςε αιο ϊΰψιλιν ρτφιτιν αξγιπδ ξρειιξϊ μτι ρεβ ξωμεη
+--Γ΅Γ¥Γ£Γ· Γ«Γ®Γ¤ Γ®Γ«Γ©ΓΈΓ¥ΓΊ Γ¤ΓΊΓ΅Γ¶Γ²Γ¥ Γ΅Γ©Γ― ΓΊΓ ΓΈΓ©Γ«Γ©Γ­ Γ±Γ΄Γ¶Γ©Γ΄Γ©Γ­ Γ΅Γ®Γ£Γ©Γ°Γ¤ Γ®Γ±Γ¥Γ©Γ©Γ®ΓΊ Γ¬Γ΄Γ© Γ±Γ¥ΓΆ Γ®ΓΉΓ¬Γ¥Γ§
 -- drop function function_CountrySellesByShippingType
 create function function_CountrySellesByShippingType ( @Country varchar(20), @from date, @until date, @ShipingType varchar(20))
 returns table as return
@@ -164,7 +164,7 @@ select *
 from dbo.function_CountrySellesByShippingType('denemrk','2021-12-12','2022-12-12','Pick Up')
 
 
---ξηιχϊ ψδιθ μμΰ φεψκ μδϊηωα αθαμΰεϊ ωδεΰ ξτϊη ζψ αδν ξεγιτιχωιιο ΰζ λωιω τςεμϊ ξηιχδ δεΰ χεγν ξεηχ αθαμϊ ξτϊη δζψ εΰζ αθαμδ δπηεφδ
+--Γ®Γ§Γ©Γ·ΓΊ ΓΈΓ¤Γ©Γ¨ Γ¬Γ¬Γ  Γ¶Γ¥ΓΈΓª Γ¬Γ¤ΓΊΓ§ΓΉΓ΅ Γ΅Γ¨Γ΅Γ¬Γ Γ¥ΓΊ ΓΉΓ¤Γ¥Γ  Γ®Γ΄ΓΊΓ§ Γ¦ΓΈ Γ΅Γ¤Γ­ Γ®Γ¥Γ£Γ©Γ΄Γ©Γ·ΓΉΓ©Γ©Γ― Γ Γ¦ Γ«ΓΉΓ©ΓΉ Γ΄Γ²Γ¥Γ¬ΓΊ Γ®Γ§Γ©Γ·Γ¤ Γ¤Γ¥Γ  Γ·Γ¥Γ£Γ­ Γ®Γ¥Γ§Γ· Γ΅Γ¨Γ΅Γ¬ΓΊ Γ®Γ΄ΓΊΓ§ Γ¤Γ¦ΓΈ Γ¥Γ Γ¦ Γ΅Γ¨Γ΅Γ¬Γ¤ Γ¤Γ°Γ§Γ¥Γ¶Γ¤
 -- drop trigger Update_modifications
 CREATE TRIGGER Update_modifications
 ON furnitures instead of delete
@@ -182,7 +182,7 @@ where m.ItemID = 108
 delete from Furnitures where Furnitures.ItemID = 108
 
 
---δηαψδ ψεφδ μγςϊ λξδ ψδιθιν πξλψε μτπι ηεγωιν λγι μΰτωψ ηιζει δρτχδ μτι δφψλιν ωμ λμ ξγιπδ
+--Γ¤Γ§Γ΅ΓΈΓ¤ ΓΈΓ¥Γ¶Γ¤ Γ¬Γ£Γ²ΓΊ Γ«Γ®Γ¤ ΓΈΓ¤Γ©Γ¨Γ©Γ­ Γ°Γ®Γ«ΓΈΓ¥ Γ¬Γ΄Γ°Γ© Γ§Γ¥Γ£ΓΉΓ©Γ­ Γ«Γ£Γ© Γ¬Γ Γ΄ΓΉΓΈ Γ§Γ©Γ¦Γ¥Γ© Γ¤Γ±Γ΄Γ·Γ¤ Γ¬Γ΄Γ© Γ¤Γ¶ΓΈΓ«Γ©Γ­ ΓΉΓ¬ Γ«Γ¬ Γ®Γ£Γ©Γ°Γ¤
 create procedure sp_furniture_supply (@country varchar (20))
 	as begin 
 			select c.itemid, total_amount=  sum(c.quantity)
@@ -195,7 +195,7 @@ create procedure sp_furniture_supply (@country varchar (20))
 execute sp_furniture_supply 'israel'
 
 
---δϊημδ ωμ δγεη ςρχι
+--Γ¤ΓΊΓ§Γ¬Γ¤ ΓΉΓ¬ Γ¤Γ£Γ¥Γ§ Γ²Γ±Γ·Γ©
 -- drop view v_sales
 CREATE VIEW V_Sales as
 	select c.Email as [customer email], o.OrderID as [order ID], o.OrderDate as [order date], o.Country as [country], o.ShippingType as [Shipping Type], o.price as [order price], fu.ItemID as [furniture ID], co.quantity as [quantity] ,fu.collection as [furniture collection], fu.MainType as [furniture Main Type]
@@ -229,7 +229,7 @@ order by 2 desc
 
 
 --drop view view_selledCollections 
---ξψΰδ ΰϊ δδλπρδ ξλμ ΰερσ ΰϊ δγιψεβ ωμε εΰϊ δγιψεβ διηρι
+--Γ®ΓΈΓ Γ¤ Γ ΓΊ Γ¤Γ¤Γ«Γ°Γ±Γ¤ Γ®Γ«Γ¬ Γ Γ¥Γ±Γ³ Γ ΓΊ Γ¤Γ£Γ©ΓΈΓ¥ΓΆ ΓΉΓ¬Γ¥ Γ¥Γ ΓΊ Γ¤Γ£Γ©ΓΈΓ¥ΓΆ Γ¤Γ©Γ§Γ±Γ©
 create view view_selledCollections as
 SELECT [collection], payments = sum(o.price), 
        (select count(fu.collection)
@@ -269,30 +269,30 @@ end
 
 
 with
--- ρλεν ξλιψεϊ ωμ λεμ ξγιπδ
+-- Γ±Γ«Γ¥Γ­ Γ®Γ«Γ©ΓΈΓ¥ΓΊ ΓΉΓ¬ Γ«Γ¥Γ¬ Γ®Γ£Γ©Γ°Γ¤
 countrySale (countryS ,[sum country Sales]) as
 (select o.Country , sum(o.price)
 from orders as o	
 group by o.Country),
 
---λξεϊ μχεηεϊ αλμ ξγιπδ
+--Γ«Γ®Γ¥ΓΊ Γ¬Γ·Γ¥Γ§Γ¥ΓΊ Γ΅Γ«Γ¬ Γ®Γ£Γ©Γ°Γ¤
 countryCostomers (countryC, [coustemer amount]) as
 (select o.country, count(distinct c.Email)
  from orders as o join CreditCards as cc on o.CardNumber = cc.CardNumber
 	  join Customers as c on c.Email = cc.Email
  group by o.Country),
 
---λμμ δψεεηιν ωμ δηαψδ
+--Γ«Γ¬Γ¬ Γ¤ΓΈΓ¥Γ¥Γ§Γ©Γ­ ΓΉΓ¬ Γ¤Γ§Γ΅ΓΈΓ¤
 totalP as
 (select sum(o.price) as [total profit]
  from orders as o),
  
---ΰηεζ ψεεη ξλμμ δψεεηιν ωμ δηαψδ
+--Γ Γ§Γ¥Γ¦ ΓΈΓ¥Γ¥Γ§ Γ®Γ«Γ¬Γ¬ Γ¤ΓΈΓ¥Γ¥Γ§Γ©Γ­ ΓΉΓ¬ Γ¤Γ§Γ΅ΓΈΓ¤
 countryProfitP (countryP, [profit percent]) as
 (select cs.countryS, [profit precent] = cs.[sum country Sales]/[total profit]
  from countrySale as cs cross join totalP),
 
--- λξεϊ δΰιρετιν
+-- Γ«Γ®Γ¥ΓΊ Γ¤Γ Γ©Γ±Γ¥Γ΄Γ©Γ­
 countryPickUps (countryPU, [Pick Ups amount]) as
 (select o.country, pickups = count (*)
 from Customers as c join creditcards as cc on c.email= cc.email
@@ -300,7 +300,7 @@ join orders as o on cc.cardnumber= o.cardnumber
 where o.shippingtype= 'pick up' 
 group by o.country),
 
--- λξεϊ δξωμεηιν
+-- Γ«Γ®Γ¥ΓΊ Γ¤Γ®ΓΉΓ¬Γ¥Γ§Γ©Γ­
 countryShipping (countrySh, [Shipping amount]) as
 (select o.country, Shipping = count (*)
 from Customers as c join creditcards as cc on c.email= cc.email
