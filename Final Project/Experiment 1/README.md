@@ -4,11 +4,11 @@
 This experiment validates our custom neural network implementations against library-based versions to ensure correct functionality.
 
 ## Folder Structure
-### Basic ANN/
+### Basic ANN
 - `final ANN BFGS.py`: Custom implementation of traditional neural network
 - `ANN with BFGS library.py`: Library-based implementation for validation
 
-### Ensemble/
+### Ensemble
 - `final ANN Ensemble.py`: Custom implementation of ensemble network
 - `ANN with Ensemble library.py`: Library-based implementation for validation
 
